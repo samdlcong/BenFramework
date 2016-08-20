@@ -22,6 +22,6 @@ if(DEBUG){
 include CORE.'/common/function.php';
 include CORE.'/ben.php';
 
-spl_autoload_register('ben::load()')
+spl_autoload_register('\core\ben::load');
 
 \core\ben::run();
