@@ -9,7 +9,7 @@
 define('BEN', realpath('./'));
 define('CORE', BEN.'/core');
 define('APP', BEN.'/app');
-
+define('MODULE','\app');
 define('DEBUG', true);
 
 if(DEBUG){
