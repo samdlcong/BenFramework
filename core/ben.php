@@ -3,7 +3,7 @@ namespace core;
 
 class ben{
 	static public $classMap=array();
-
+	public $assign =array();
 	static public function run(){
 		//p('ok');
 		$route = new \core\lib\route();
@@ -35,6 +35,19 @@ class ben{
 			}else{
 				return false;
 			}
+		}
+	}
+
+	public function assign($name,$value){
+		$this->assign[$name] = $value;
+	}
+
+	public function display($file){
+		$file = APP.'/views/'.$file;
+		//p($file);
+		if(is_file($file)){
+			extract($this->assign);
+			include $file;
 		}
 	}
 }

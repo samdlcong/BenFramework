@@ -1,12 +1,17 @@
 <?php
 namespace app\ctrl;
-class indexCtrl {
+class indexCtrl extends \core\ben {
 	public function index(){
 		p('it is index');
 		$model = new \core\lib\model();
 		$sql = 'select * from user';
 		$res = $model->query($sql);
 		$arr = $res->fetchAll(\PDO::FETCH_ASSOC);
-		p($arr);
+		//p($arr);
+		$data ='hello world';
+		$date = date('Y-m-d H:i:s');
+		$this->assign('data',$data);
+		$this->assign('date',$date);
+		$this->display('index/index.html');
 	}
 }
