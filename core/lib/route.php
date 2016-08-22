@@ -33,7 +33,7 @@ class route {
 				}
 				$i+=2;
 			}
-			p($_GET);
+			//p($_GET);
 		}else{
 			$this->ctrl = config::get('CTRL','route');
 			$this->action = config::get('ACTION','route');

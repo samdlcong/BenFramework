@@ -6,6 +6,9 @@ class ben{
 	public $assign =array();
 	static public function run(){
 		//p('ok');
+		\core\lib\log::init();
+		//\core\lib\log::log('test');
+		//\core\lib\log::log($_SERVER,'server');
 		$route = new \core\lib\route();
 		$ctrlClass =$route->ctrl;
 		$action = $route->action;
@@ -17,6 +20,8 @@ class ben{
 			//new MODULE.'\ctrl\\'.$ctrlClass();
 			$ctrl = new $ctrlClass();
 			$ctrl->$action();
+			print_r($ctrl);
+			\core\lib\log::log('Ctrl: '.$ctrlClass.'  '.'Action: '.$action);
 		}else{
 			throw new \Exception('找不到控制器'.$ctrlClass);
 		}
