@@ -20,7 +20,7 @@ class ben{
 			//new MODULE.'\ctrl\\'.$ctrlClass();
 			$ctrl = new $ctrlClass();
 			$ctrl->$action();
-			print_r($ctrl);
+			//print_r($ctrl);
 			\core\lib\log::log('Ctrl: '.$ctrlClass.'  '.'Action: '.$action);
 		}else{
 			throw new \Exception('找不到控制器'.$ctrlClass);
