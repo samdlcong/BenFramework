@@ -51,8 +51,18 @@ class ben{
 		$file = APP.'/views/'.$file;
 		//p($file);
 		if(is_file($file)){
-			extract($this->assign);
-			include $file;
+			//extract($this->assign);
+			\Twig_Autoloader::register();
+
+			$loader = new \Twig_Loader_Filesystem(APP.'/views');
+			$twig = new \Twig_Environment($loader,array(
+				'cache'=>BEN.'/log/twig',
+				'debug'=>DEBUG
+			));
+			$template = $twig->loadTemplate('index\index.html');
+			$template->display($this->assign?$this->assign:'');
+
+
 		}
 	}
 }

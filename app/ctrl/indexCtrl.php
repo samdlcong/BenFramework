@@ -3,7 +3,7 @@ namespace app\ctrl;
 use core\lib\model;
 class indexCtrl extends \core\ben {
 	public function index(){
-		p('it is index');
+		//p('it is index');
 		//$temp = \core\lib\config::get('ACTION','route');
 		//p($temp);
 		//$temp = \core\lib\config::get('ACTION','route');
@@ -32,6 +32,12 @@ class indexCtrl extends \core\ben {
 		$date = date('Y-m-d H:i:s');
 		$this->assign('data',$data);
 		$this->assign('date',$date);
-		$this->display('index/index.html');
+		$this->display('index\index.html');
 	}
-}
+
+	public function test(){
+		$data ='test';
+		$this->assign('data',$data);
+		$this->display('index\test.html');
+	}
+}	

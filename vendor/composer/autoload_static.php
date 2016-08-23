@@ -39,6 +39,13 @@ class ComposerStaticInit1b64f57800b6ef6aaa16361e80119779
                 0 => __DIR__ . '/..' . '/filp/whoops/src',
             ),
         ),
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
     );
 
     public static $classMap = array (
