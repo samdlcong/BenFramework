@@ -60,7 +60,7 @@ class ben{
 				'debug'=>DEBUG
 			));
 			$template = $twig->loadTemplate('index\index.html');
-			$template->display($this->assign?$this->assign:'');
+			$template->display($this->assign?$this->assign:array());
 
 
 		}
